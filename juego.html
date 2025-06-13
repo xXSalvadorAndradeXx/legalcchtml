@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34 Meses Juntos - Nuestra Historia de Amor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #ffb8b8;
+            --accent-color: #ff4757;
+            --text-color: #333;
+            --light-color: #fff9f9;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 30px 0;
+            font-size: 1.8em;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        header::before {
+            content: "❤️";
+            position: absolute;
+            font-size: 1.5em;
+            opacity: 0.2;
+            animation: float 15s infinite linear;
+        }
+
+        header::after {
+            content: "💕";
+            position: absolute;
+            font-size: 2em;
+            right: 10%;
+            top: 20%;
+            opacity: 0.2;
+            animation: float 12s infinite linear reverse;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            padding: 60px 20px;
+            position: relative;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ffb8b8" fill-opacity="0.1" d="M30,50 Q50,30 70,50 Q50,70 30,50"/></svg>');
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .couple-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .couple-photo:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 {
+            margin-top: 20px;
+            font-size: 3em;
+            color: var(--accent-color);
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.03); }
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin: 20px 0 30px;
+            position: relative;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .hero p::before, .hero p::after {
+            content: '"';
+            font-size: 3em;
+            color: var(--primary-color);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .hero p::before {
+            top: -10px;
+            left: 5px;
+        }
+
+        .hero p::after {
+            bottom: -40px;
+            right: 5px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+            background: linear-gradient(to bottom, var(--light-color), #fff);
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+            right: -10px;
+            top: 20px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+            left: -10px;
+            top: 20px;
+        }
+
+        .timeline-date {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            top: 30px;
+            z-index: 1;
+            box-shadow: 0 0 0 5px rgba(255, 71, 87, 0.2);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+
+        .gallery {
+            padding: 40px 20px;
+            background: linear-gradient(to bottom, #fff, var(--light-color));
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 1/1;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            padding: 20px 15px 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo-item:hover .photo-caption {
+            opacity: 1;
+        }
+
+        .love-letter {
+            padding: 60px 20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ff6b6b" fill-opacity="0.05" d="M30,10 Q50,5 70,10 L90,30 Q95,50 90,70 L70,90 Q50,95 30,90 L10,70 Q5,50 10,30 Z"/></svg>');
+            text-align: center;
+        }
+
+        .letter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .letter-container::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px dashed rgba(255, 107, 107, 0.3);
+            border-radius: 5px;
+            pointer-events: none;
+        }
+
+        .love-letter h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8em;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .love-letter p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            color: var(--accent-color);
+            margin-top: 30px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 1em;
+            position: relative;
+        }
+
+        .heart-beat {
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 10px;
+            min-width: 70px;
+        }
+
+        .countdown-number {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .countdown-label {
+            font-size: 0.8em;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -10px;
+                right: auto;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            .hero h1 {
+                font-size: 2.2em;
+            }
+            
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            Celebrando 34 Meses de Amor 💖
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="https://via.placeholder.com/300/ff6b6b/ffffff?text=Nosotros" alt="Nuestra foto juntos" class="couple-photo">
+            <h1>¡34 Meses Contigo!</h1>
+            <p>Cada día a tu lado es un regalo que atesoro con todo mi corazón. En estos 34 meses has llenado mi vida de amor, risas y momentos inolvidables. Eres mi persona favorita en este mundo y no puedo esperar para seguir construyendo nuestro futuro juntos.</p>
+            
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">34</div>
+                    <div class="countdown-label">Meses</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">1,020</div>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">24,480</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline">
+        <div class="container">
+            <h2 style="text-align: center; font-family: 'Dancing Script', cursive; font-size: 2.5em; color: var(--accent-color); margin-bottom: 40px;">Nuestra Historia</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Agosto 2022</div>
+                    <p>Nuestro primer encuentro. Recuerdo cómo tu sonrisa iluminó la habitación y supe que eras alguien especial.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Agosto 2023</div>
+                    <p>Nuestra primera cita oficial. Pasamos horas hablando como si nos conociéramos de toda la vida.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Agosto 2024</div>
+                    <p>Nuestro primer viaje juntos. Descubrí que eres la mejor compañera de aventuras que podría desear.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Agosto 2025</div>
+                    <p>Celebramos nuestra primera Navidad juntos, creando tradiciones que ahora son sagradas para nosotros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2>Nuestros Momentos</h2>
+        <div class="photo-grid">
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/300/ff6b6b/ffffff?text=Momentos" alt="Nuestro primer aniversario">
+                <div class="photo-caption">Nuestro primer aniversario</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/300/ffb8b8/ffffff?text=Aventuras" alt="Viaje a la playa">
+                <div class="photo-caption">Aventuras en la playa</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/300/ff6b6b/ffffff?text=Risas" alt="Noche de juegos">
+                <div class="photo-caption">Noches llenas de risas</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/300/ffb8b8/ffffff?text=Complicidad" alt="Selfie casual">
+                <div class="photo-caption">Momentos de complicidad</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/300/ff6b6b/ffffff?text=Celebraciones" alt="Celebrando un logro">
+                <div class="photo-caption">Celebrando juntos</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/300/ffb8b8/ffffff?text=Amor" alt="Abrazo cariñoso">
+                <div class="photo-caption">Amor en cada gesto</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="love-letter">
+        <div class="letter-container">
+            <h2>Para Ti, Mi Amor</h2>
+            
+            <p>Querida Frijolito,</p>
+            
+            <p>Hoy celebramos 34 meses de compartir nuestras vidas, nuestros sueños y nuestro amor. Cada día a tu lado ha sido una bendición que agradezco con todo mi corazón.</p>
+            
+            <p>Recuerdo cada risa compartida, cada lágrima enjugada, cada desafío superado juntos. Has sido mi roca, mi inspiración y mi mayor alegría. Tu amor me ha hecho mejor persona y cada día me esfuerzo por ser digno de él.</p>
+            
+            <p>En estos 34 meses hemos construido recuerdos que atesoraré por siempre: nuestras noches de películas, las conversaciones hasta altas horas de la madrugada, los viajes llenos de aventuras y esos pequeños momentos cotidianos que contigo se convierten en magia.</p>
+            
+            <p>Prometo seguir amándote con la misma intensidad que el primer día, con más sabiduría que ayer y con la esperanza de todos los mañanas que nos esperan. Eres mi hogar, mi paz y mi mayor felicidad.</p>
+            
+            <p>Con todo mi amor,</p>
+            <div class="signature">Salvador Andrade</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Hecho con <span class="heart-beat">❤️</span> para la persona más especial de mi vida</p>
+            <p>© 2023 - Nuestra Historia de Amor</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animación para la línea de tiempo
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            function checkVisibility() {
+                timelineItems.forEach(item => {
+                    const rect = item.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        item.classList.add('visible');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility(); // Comprobar al cargar la página
+            
+            // Actualizar contador de días, horas y minutos
+            function updateCountdown() {
+                const months = 34;
+                const days = months * 30; // Aproximado
+                const hours = days * 24;
+                const minutes = hours * 60;
+                
+                document.getElementById('days').textContent = months;
+                document.getElementById('hours').textContent = days.toLocaleString();
+                document.getElementById('minutes').textContent = hours.toLocaleString();
+            }
+            
+            updateCountdown();
+        });
+    </script>
+</body>
+</html>
