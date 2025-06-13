@@ -150,7 +150,33 @@ background-position: center;
             padding: 40px 0;
             background: linear-gradient(to bottom, var(--light-color), #fff);
         }
+.timeline-image {
+    margin: 10px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.timeline-image img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.timeline-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Ajuste para los elementos con imagen */
+.timeline-item.with-image .timeline-content::after {
+    top: 40px; /* Ajusta según el tamaño de tu imagen */
+}
         .timeline::before {
             content: '';
             position: absolute;
