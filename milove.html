@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>36 Meses Juntos - Nuestra Historia de Amor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="diseño.css">
+</head>
+<body>
+
+    <button class="toggle-player" id="togglePlayer">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- Reproductor de música -->
+    <div class="music-player" id="musicPlayer">
+        <div class="player-header">
+            <div class="player-title">Nuestra Música</div>
+            <button class="close-player" id="closePlayer">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="song-info">
+            <div class="song-title" id="songTitle">Canción de amor</div>
+            <div class="song-artist" id="songArtist">Artista</div>
+        </div>
+        
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
+        <div class="time-info">
+            <span id="currentTime">0:00</span>
+            <span id="duration">0:00</span>
+        </div>
+        
+        <div class="player-controls">
+            <button class="control-btn" id="prevBtn">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button class="control-btn" id="playBtn">
+                <i class="fas fa-play" id="playIcon"></i>
+            </button>
+            <button class="control-btn" id="nextBtn">
+                <i class="fas fa-step-forward"></i>
+            </button>
+        </div>
+        
+        <div class="volume-control">
+            <i class="fas fa-volume-up volume-icon"></i>
+            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+        </div>
+    </div>
+    <header>
+        <div class="container">
+            Celebrando 36 Meses de Amor 💖
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="/images.png" alt="Nuestra foto juntos" class="couple-photo">
+            <h1>¡36 Meses Contigo!</h1>
+            <p>Cada día a tu lado es un regalo que atesoro con todo mi corazón. En estos 36 meses has llenado mi vida de amor, risas y momentos inolvidables. Eres mi persona favorita en este mundo y no puedo esperar para seguir construyendo nuestro futuro juntos.</p>
+            
+            <div class="countdown">
+
+                 <div class="countdown-item">
+                    <div class="countdown-number" id="años">3</div>
+                    <div class="countdown-label">Años</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">34</div>
+                    <div class="countdown-label">Meses</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">1,020</div>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">24,480</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline">
+        <div class="container">
+            <h2 style="text-align: center; font-family: 'Dancing Script', cursive; font-size: 2.5em; color: var(--accent-color); margin-bottom: 40px;">Nuestra Historia</h2>
+            
+           <div class="timeline-item">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+        <div class="timeline-date">Agosto 2022</div>
+        <!-- Agrega esta línea para la imagen -->
+        <div class="timeline-image">
+            <img src="/images.png" alt="Nuestra primera cita">
+        </div>
+        <p>Nuestra primera cita. Nuestra primera cita. Nuestra primera cita.</p>
+    </div>
+</div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Agosto 2023</div>
+                      <div class="timeline-image">
+            <img src="/images.png" alt="Nuestra primera cita">
+        </div>
+                    <p>(Primera salida a san miguel)</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Agosto 2024</div>
+                      <div class="timeline-image">
+            <img src="/images.png" alt="Nuestra primera cita">
+        </div>
+                    <p>Primera cita grande.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Agosto 2025</div>
+                      <div class="timeline-image">
+            <img src="/images.png" alt="Nuestra primera cita">
+        </div>
+                    <p>Primera vez yendo a bañar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2>Nuestros Momentos</h2>
+        <div class="photo-grid">
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/300/ff6b6b/ffffff?text=Momentos" alt="Nuestro primer aniversario">
+                <div class="photo-caption">Nuestro primer aniversario</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/300/ffb8b8/ffffff?text=Aventuras" alt="Viaje a la playa">
+                <div class="photo-caption">Aventuras en la playa</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/300/ff6b6b/ffffff?text=Risas" alt="Noche de juegos">
+                <div class="photo-caption">Noches llenas de risas</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/300/ffb8b8/ffffff?text=Complicidad" alt="Selfie casual">
+                <div class="photo-caption">Momentos de complicidad</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/300/ff6b6b/ffffff?text=Celebraciones" alt="Celebrando un logro">
+                <div class="photo-caption">Celebrando juntos</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/300/ffb8b8/ffffff?text=Amor" alt="Abrazo cariñoso">
+                <div class="photo-caption">Amor en cada gesto</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="love-letter">
+        <div class="letter-container">
+            <h2>Para Ti, Mi Amor</h2>
+            
+            <p>Querida Frijolito,</p>
+            
+            <p>Hoy celebramos 36 meses de compartir nuestras vidas, nuestros sueños y nuestro amor. Cada día a tu lado ha sido una bendición que agradezco con todo mi corazón.</p>
+            
+            <p>Recuerdo cada risa compartida, cada lágrima enjugada, cada desafío superado juntos. Has sido mi roca, mi inspiración y mi mayor alegría. Tu amor me ha hecho mejor persona y cada día me esfuerzo por ser digno de él.</p>
+            
+            <p>En estos 36 meses hemos construido recuerdos que atesoraré por siempre: nuestras noches de películas, las conversaciones hasta altas horas de la madrugada, los viajes llenos de aventuras y esos pequeños momentos cotidianos que contigo se convierten en magia.</p>
+            
+            <p>Prometo seguir amándote con la misma intensidad que el primer día, con más sabiduría que ayer y con la esperanza de todos los mañanas que nos esperan. Eres mi hogar, mi paz y mi mayor felicidad.</p>
+            
+            <p>Con todo mi amor,</p>
+            <div class="signature">Salvador Andrade</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Hecho con <span class="heart-beat">❤️</span> para la persona más especial de mi vida</p>
+            <p>© 2023 - Nuestra Historia de Amor</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animación para la línea de tiempo
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            function checkVisibility() {
+                timelineItems.forEach(item => {
+                    const rect = item.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        item.classList.add('visible');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility(); // Comprobar al cargar la página
+            
+            // Actualizar contador de días, horas y minutos
+            function updateCountdown() {
+                const months = 36;
+                const days = months * 30; // Aproximado
+                const hours = days * 24;
+                const minutes = hours * 60;
+                
+                document.getElementById('days').textContent = months;
+                document.getElementById('hours').textContent = days.toLocaleString();
+                document.getElementById('minutes').textContent = hours.toLocaleString();
+            }
+            
+            updateCountdown();
+            // Reproductor de música
+            const togglePlayer = document.getElementById('togglePlayer');
+            const musicPlayer = document.getElementById('musicPlayer');
+            const closePlayer = document.getElementById('closePlayer');
+            const playBtn = document.getElementById('playBtn');
+            const playIcon = document.getElementById('playIcon');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const progressBar = document.getElementById('progressBar');
+            const progressContainer = document.getElementById('progressContainer');
+            const currentTimeEl = document.getElementById('currentTime');
+            const durationEl = document.getElementById('duration');
+            const volumeSlider = document.getElementById('volumeSlider');
+            const songTitle = document.getElementById('songTitle');
+            const songArtist = document.getElementById('songArtist');
+
+            // Lista de canciones (reemplaza con tus archivos locales)
+            const songs = [
+                {
+                    title: "A Donde Va El Viento",
+                    artist: "Para Ti",
+                    src: "/Musica/A Donde Va El Viento (Canción de la Serie Original de Prime).mp3" // Cambia por la ruta de tu archivo
+                
+                },
+                {
+                    title: "Khé",
+                    artist: "Amor Eterno",
+                    src: "/Musica/Khé_.mp3" // Cambia por la ruta de tu archivo
+                },
+                {
+                    title: "Mi Buen Amor",
+                    artist: "Solo para Ti",
+                    src: "/Musica/Mi Buen Amor.mp3" // Cambia por la ruta de tu archivo
+                },
+                {
+                    title: "Tiroteo",
+                    artist: "Solo para Ti",
+                    src: "/Musica/Tiroteo.mp3" // Cambia por la ruta de tu archivo
+                },
+                {
+                    title: "Steal The Show",
+                    artist: "Solo para Ti",
+                    src: "/Musica/Lauv - Steal The Show (From ElementalLyric Video).mp3" // Cambia por la ruta de tu archivo
+                },{
+                    title: "La Bachata",
+                    artist: "Solo para Ti",
+                    src: "/Musica/Manuel Turizo - La Bachata.mp3" // Cambia por la ruta de tu archivo
+                },
+                {
+                    title: "Beginning Middle End",
+                    artist: "Solo para Ti",
+                    src: "/Musica/Beginning Middle End  Leah Nobel (From Netflixs To All The Boys_ Always and Forever) Lyric Video.mp3" // Cambia por la ruta de tu archivo
+                }
+            ];
+
+            // Crear elemento de audio
+            const audio = new Audio();
+            let currentSongIndex = 0;
+            let isPlaying = false;
+
+            // Cargar canción
+            function loadSong(song) {
+                songTitle.textContent = song.title;
+                songArtist.textContent = song.artist;
+                audio.src = song.src;
+            }
+
+            // Reproducir canción
+            function playSong() {
+                isPlaying = true;
+                playIcon.classList.replace('fa-play', 'fa-pause');
+                audio.play();
+                musicPlayer.classList.add('playing');
+            }
+
+            // Pausar canción
+            function pauseSong() {
+                isPlaying = false;
+                playIcon.classList.replace('fa-pause', 'fa-play');
+                audio.pause();
+                musicPlayer.classList.remove('playing');
+            }
+
+            // Canción anterior
+            function prevSong() {
+                currentSongIndex--;
+                if (currentSongIndex < 0) {
+                    currentSongIndex = songs.length - 1;
+                }
+                loadSong(songs[currentSongIndex]);
+                if (isPlaying) {
+                    playSong();
+                }
+            }
+
+            // Siguiente canción
+            function nextSong() {
+                currentSongIndex++;
+                if (currentSongIndex > songs.length - 1) {
+                    currentSongIndex = 0;
+                }
+                loadSong(songs[currentSongIndex]);
+                if (isPlaying) {
+                    playSong();
+                }
+            }
+
+            // Actualizar barra de progreso
+            function updateProgress(e) {
+                const { duration, currentTime } = e.srcElement;
+                const progressPercent = (currentTime / duration) * 100;
+                progressBar.style.width = `${progressPercent}%`;
+                
+                // Formatear tiempo
+                const durationMinutes = Math.floor(duration / 60);
+                let durationSeconds = Math.floor(duration % 60);
+                if (durationSeconds < 10) {
+                    durationSeconds = `0${durationSeconds}`;
+                }
+                
+                // Evitar NaN
+                if (durationSeconds) {
+                    durationEl.textContent = `${durationMinutes}:${durationSeconds}`;
+                }
+                
+                const currentMinutes = Math.floor(currentTime / 60);
+                let currentSeconds = Math.floor(currentTime % 60);
+                if (currentSeconds < 10) {
+                    currentSeconds = `0${currentSeconds}`;
+                }
+                currentTimeEl.textContent = `${currentMinutes}:${currentSeconds}`;
+            }
+
+            // Establecer progreso al hacer clic
+            function setProgress(e) {
+                const width = this.clientWidth;
+                const clickX = e.offsetX;
+                const duration = audio.duration;
+                audio.currentTime = (clickX / width) * duration;
+            }
+
+            // Event listeners
+            togglePlayer.addEventListener('click', () => {
+                musicPlayer.classList.toggle('visible');
+            });
+
+            closePlayer.addEventListener('click', () => {
+                musicPlayer.classList.remove('visible');
+            });
+
+            playBtn.addEventListener('click', () => {
+                isPlaying ? pauseSong() : playSong();
+            });
+
+            prevBtn.addEventListener('click', prevSong);
+            nextBtn.addEventListener('click', nextSong);
+
+            audio.addEventListener('timeupdate', updateProgress);
+            audio.addEventListener('ended', nextSong);
+            progressContainer.addEventListener('click', setProgress);
+
+            volumeSlider.addEventListener('input', (e) => {
+                audio.volume = e.target.value;
+            });
+
+            // Cargar primera canción
+            loadSong(songs[currentSongIndex]);
+        });
+       
+        
+
+
+
+
+
+    </script>
+</body>
+</html>
